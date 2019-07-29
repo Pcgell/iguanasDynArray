@@ -1,12 +1,13 @@
 package edu.ujcv.progra2;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
 
-
-        DynArray<Integer> areglo = new DynArray(5);
+        DynArray<Integer> areglo = new DynArray<>(5);
 
         areglo.addIndex(0,1);
         areglo.add(2);
@@ -30,8 +31,15 @@ public class Main {
         areglos.add("mineCraft");
         areglos.add("www.");
         areglos.addIndex(areglos.getSize(),"G");
+        areglos.removeFirst();
+        areglos.removeLast();
+        areglos.removeLast();
 
 
+        if(args.length > 0){
+
+            //TODO: leer los argumentos y comprimir 'o' descomprimir segun apropiado.
+        }
 
     }
 }

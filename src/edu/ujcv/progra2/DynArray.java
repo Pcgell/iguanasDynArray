@@ -31,7 +31,12 @@ public class DynArray<T> {
         array[n] = element;
     }
 
-
+    public T getIndex(int n){
+        if(n > size){
+            throw new IndexOutOfBoundsException();
+        }
+        return array[n];
+    }
 
 
     public void add(T element){
@@ -56,8 +61,20 @@ public class DynArray<T> {
         }
     }
 
-    public void remove(){
+    public T removeLast(){
+        T temp = array[size-1];
         size--;
+        return temp;
+    }
+
+    public T removeFirst(){
+        T temp = array[0];
+
+        for (int i = 1; i < size ; i++) {
+            array[i-1] = array[i];
+        }
+        size--;
+        return temp;
     }
 
 
@@ -113,4 +130,6 @@ public class DynArray<T> {
         return builder.toString();
 
     }
+
+
 }
